@@ -4,6 +4,16 @@ import pickle
 import random
 import gym
 
+from enum import IntEnum
+
+class Actions(IntEnum):
+    MOVE_SOUTH = 0
+    MOVE_NORTH = 1
+    MOVE_EAST = 2
+    MOVE_WEST = 3
+    PICK_UP = 4
+    DROP_OFF = 5
+
 def get_action(obs):
     
     # TODO: Train your own agent
