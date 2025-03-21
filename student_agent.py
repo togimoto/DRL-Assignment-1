@@ -13,12 +13,11 @@ def get_action(obs):
     assert q_table is not None, "Failed to load Q-table."
 
     observations = Observations(obs)
-    state = State(
+    state = tuple( State(
         observations.obstacle_north,
         observations.obstacle_south,
         observations.obstacle_east,
         observations.obstacle_west,
-    )
+    ) )
     action = np.argmax(q_table[state])
-
     return action

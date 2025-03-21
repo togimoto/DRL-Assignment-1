@@ -25,7 +25,7 @@ def train(
     epsilon_end=0, # decay to 0 to verify performance
     decay_rate=0.9992,
 ) -> None:
-    empty_q_table_row = lambda: np.zeros(len(Actions), dtype=float)
+    empty_q_table_row = lambda: [0.] * len(Actions)
     if input_filename:
         with open(input_filename, "rb") as file:
             q_table = defaultdict(empty_q_table_row, pickle.load(file))
