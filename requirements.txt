@@ -2,3 +2,16 @@ tqdm
 requests
 argparse
 torch
+gym
+gym-minigrid
+numpy==1.26.4  # Using a newer version like 2.2.3 runs into the following error:
+               # ```
+               # AttributeError: module 'numpy' has no attribute 'bool8'
+               # ```
+               # A quick online search reveals 'bool8' has been deprecated since
+               # 1.24 and one should downgrade to 1.23.5. However, using 1.23.5
+               # runs into a ModuleNotFoundError. Since the code works on Colab
+               # with its 1.26.4 numpy, we shall use it here.
+matplotlib
+imageio
+IPython
